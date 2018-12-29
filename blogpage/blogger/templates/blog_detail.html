@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+  #detail {
+    background-color:#e3dfdf;
+    padding:20px;
+     }
+</style>
+<div id="detail">
+
+<h1>welcome</h1>
+{% for b in obj %}
+ {{ b.image }}
+ <h3> {{ b.title }}  </h3>
+ <b> {{b.author}} </b> / <b> {{ b.date }} </b><br>
+    {{ b.content }}
+<a href="#">Update</a>  &nbsp; <a href="#">Delete</a>
+</div>
+{% endfor %}
+{% endblock %}

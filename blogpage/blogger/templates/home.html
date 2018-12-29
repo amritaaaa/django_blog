@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load staticfiles %}
+<div class="container">
+    {{ msg }} {{ user }}  <br> <a href="{% url 'login' %}">Create Blogs</a>
+    <h2>Latest Blogs</h2>
+    {% for blog in article %}
+    <div class="row">
+        <div class="col-md-3">
+            <img src="{% static '/images/p1.jpg' %}" class="img-responsive" width='200' height='200'>
+        </div>
+        <div class="col-md-9" style="text-align: -webkit-left; padding-left: 0px;">
+            <b>{{ blog.author }} / {{ blog.date }}</b>
+            <h3>{{ blog.title}}</h3>
+            <p>{{ blog.content|truncatewords:50 }}</p><a href="{{blog.id}}">read more....</a>
+            <br><a href="{{blog.id}}">edit</a></br>
+        </div>
+    </div>
+    <hr>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

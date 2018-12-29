@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<style>
+    #blog{
+    margin:auto;
+    padding:15px;
+    background-color:pink;
+    }
+</style>
+<div id="blog">
+    {{ msg }} <b>{{ user}}</b>
+   <form method="POST" action="{% url 'create_blog' %}">
+       {% csrf_token %}
+
+           <table width="800px" height="500px" >
+               <fieldset>
+               <td><label>author : </label></td>
+                  <td> <input type="text" name="author" size="50px;" required="required"></td>
+           </tr>
+           <tr>
+               <td><label>category : </label></td>
+               <td><input type="text" name="cat" size="50px;" required="required"></td>
+           </tr>
+           <tr>
+               <td><label>title : </label></td>
+               <td><input type="text" name="title" size="50px;" required="required"></td>
+           </tr>
+           <tr>
+               <td><label>content : </label></td>
+               <td><textarea name="content" col="40" rows="7" required="required" "></textarea></td>
+           </tr>
+            <tr>
+               <td><label>image : </label></td>
+               <td><input type="text" name="img" size="50px;"></td>
+           </tr>
+               <tr>
+               <td></td>
+               <td><input type="submit" value="create"></td>
+            </fieldset>
+           </table>
+
+
+   </form>
+</div>
+<table>
+
+               <tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                   <td><input type="submit" value=" &nbsp;update"></td>
+                   <td><input type="submit" value=" &nbsp;&nbsp;delete&nbsp;"></td>
+               </tr></table>
+
+{% endblock %}
