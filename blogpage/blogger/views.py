@@ -41,6 +41,9 @@ def register(request):
     return render(request,'users/registration.html')
 
 def login(request):
+    if request.session.has_key('username'):
+        return render(request,'user-blog/create-blog.html')
+
     if request.method =='POST':
         name=request.POST['name']
         pwd=request.POST['password']
@@ -52,16 +55,23 @@ def login(request):
             }
             return render(request, 'users/login.html', context)
         else:
-            article = models.blog_article.objects.all()
-            context={
-             'msg' :  'welcome',
-              'user': name,
+            request.session['username']=name
 
-             }
-            return render(request, 'user-blog/create-blog.html', context)
+
+
+            return render(request,'user-blog/create-blog.html')
 
 
     return render(request,'users/login.html')
+
+def logout(request):
+    try:
+        del request.session['username']
+    except:
+        pass
+    return render(request,'users/login.html')
+
+
 
 
 def create_blog(request):

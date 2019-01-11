@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'blogger',
+    'blogger','sendemail',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -119,3 +119,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+#for sendemail app
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_PORT= 25
+EMAIL_HOST_USER='amritasinha.fnd@gmail.com'
+EMAIL_HOST_PASSWORD='*********'
+EMAIL_USE_TLS=True
+EMAIL_USE_SSL=False
+
+

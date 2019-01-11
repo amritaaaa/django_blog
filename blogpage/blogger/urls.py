@@ -8,6 +8,7 @@ urlpatterns = [
     url(r'(?P<blog_id>\d+)$', views.blog_detail),
     url(r'^registration',views.register , name='register'),
     url(r'^loginn',views.login , name='login'),
+    url(r'^logoutt',views.logout , name='logout'),
     url(r'^create_blog',views.create_blog,name='create_blog')
 ]
 

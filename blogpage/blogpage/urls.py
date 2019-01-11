@@ -18,5 +18,6 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^blogpage/', include('blogger.urls'))
+    url(r'^blogpage/', include('blogger.urls')),
+    #url(r'^blogemail/',include('sendemail.urls'))
 ]

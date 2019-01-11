@@ -7,8 +7,9 @@
     background-color:pink;
     }
 </style>
+<a href="{% url 'logout'%}"><b>logout</b></a>
 <div id="blog">
-    {{ msg }} <b>{{ user}}</b>
+    {{ msg }} <b>{{ username}}........</b>
    <form method="POST" action="{% url 'create_blog' %}">
        {% csrf_token %}
 
